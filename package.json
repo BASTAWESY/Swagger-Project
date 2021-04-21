@@ -1,0 +1,54 @@
+{
+  "name": "bbeldemo",
+  "version": "0.0.0",
+  "private": true,
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "server": "node ./dist-server/bin/www",
+    "transpile": "babel ./server --out-dir dist-server",
+    "clean": "rimraf dist-server",
+    "build": "npm-run-all clean transpile",
+    "dev": "NODE_ENV = development npm-run-all build",
+    "prod": "NODE_ENV = production npm-run-all build",
+    "start": "npm run prod",
+    "watch:dev": "nodemon",
+    "test": "jest"
+  },
+  "nodemonConfig": {
+    "exec": "npm run dev",
+    "watch": [
+      "server/*",
+      "public/*"
+    ],
+    "ignore": [
+      "**/__tests__/**",
+      "*.test.js",
+      "*.spec.js"
+    ]
+  },
+  "dependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.15",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.13.15",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.16.4",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "oas-tools": "^2.1.8",
+    "rimraf": "^3.0.2",
+    "swagger-jsdoc": "5.0.1",
+    "swagger-ui": "^3.47.1",
+    "swagger-ui-express": "^4.1.6"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "type": "module"
+}
