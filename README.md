@@ -10,7 +10,7 @@ to serve this sample project
 8 - after running project open 127.0.0.1:3000/api-docs . 
 9 -enjoy with swagger DOCS .
 
-#Helpful Notes
+# Helpful Notes
 1 - when you will use swagger setup an old version like : "swagger-jsdoc": "5.0.1",
    because new versions like swagger 6 / 7 written by typescript . 
 2 - user https://editor.swagger.io/ as a referance for you .
