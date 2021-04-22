@@ -64,7 +64,7 @@ const routers = express.Router();
  *       type: integer
  *       required: true
  *       description : the user id
-*     - name : user
+ *     - name : user
  *       in: body
  *       type: object
  *       required: true
@@ -107,24 +107,13 @@ routers.put('/users/:id', (req, res)=> {
   inputUser ? res.status(200).send('user updated success .') : res.status(400).send("bad user request data.")
 });
  routers.get('/users/:id',(req, res, next)=> {
-   if(req.params.id == 1)
-      res.status(200).send({
-        first : {
-        name : "A" ,
-        age : 50
-       }
-      });
-    if(req.params.id == 2)
-      res.status(200).send({
-        second : {
-        name : "B" ,
-        age : 60
-         }
-       });
-    else
-      res.status(404).send('details of this is not found .');  
+   let user = {}
+    req.params.id === 1?
+      user = {  first : { name : "A" , age : 50 }} : 
+      user = {  first : { name : "B" , age : 60 }};
+      res.status(200).send(user);  
 });
-routers.delete('/users/:id',(req, res, next)=> {
+routers.delete('/users/:id',(req, res)=> {
   req.params.id ? res.status(200).send('user has been deleted.'):  
      res.status(404).send('bad request for delete user');  
 });
