@@ -1,8 +1,7 @@
 # Swagger-Project
 ### To serve this sample project :  
 * install nodeJS V v10.19.0 . 
-* #git clone https://github.com/BASTAWESY/Swagger-Project.git //to your own local machiine .
-* #npm install // to extract and download your librabies.
+* #git clone https://github.com/BASTAWESY/Swagger-Project.git //to your own local machiine 
 * #npm run build // to cmpile files by using babel from Echma 6 to 5 .
 * #npm run server .
 * project will run on port number 3000 .
